@@ -16,11 +16,44 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1654507988627_5162';
 
   // add your middleware config here
+  exports.middleware = ['errorHandler']
+
+  // add your middleware config here
   config.middleware = [];
+
+  // 允许跨域
+  exports.proxy = true;
+
+  exports.security = {
+    csrf: {
+      enable: false,
+      ignoreJSON: true,
+    },
+  };
+
+  exports.cors = {
+    origin: '*', // 允许所有跨域访问
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
+  };
 
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
+  };
+
+  // MongoDB 数据库
+  exports.mongoose = {
+    client: {
+      url: 'mongodb://localhost:27017/offline_db',
+      options: {
+        // user: 'root',
+        // pass: '123456',
+        useCreateIndex: true,
+        useNewUrlParser: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true,
+      },
+    },
   };
 
   return {
