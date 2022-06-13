@@ -19,7 +19,7 @@ module.exports = () => {
   // MongoDB 数据库
   // SIT环境数据库账号密码配置
   const SIT_OPTIONS = {
-    url: '<%= database %>',
+    url: '',
     options: {
       user: '',
       pass: '',
@@ -33,7 +33,7 @@ module.exports = () => {
 
   // UAT环境数据库账号密码配置
   const UAT_OPTIONS = {
-    url: '<%= database %>',
+    url: '',
     options: {
       user: '',
       pass: '',
@@ -47,7 +47,7 @@ module.exports = () => {
 
   // PROD环境数据库账号密码配置
   const RPOD_OPTIONS = {
-    url: '<%= database %>',
+    url: '',
     options: {
       user: '',
       pass: '',
